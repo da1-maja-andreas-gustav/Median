@@ -1,8 +1,10 @@
 // Version: 20200917
 // Handin done by:
 //   <202004107> <A. Malthe Henriksen>
+//   <201905796> <Maja Vonge Cornils>
 // Contributions:
 //   <A. Malthe Henriksen> <Programmed exercise.>
+//   <Maja Vonge Cornils> <Advice.>
 
 import java.io.*;
 import java.util.*;
@@ -23,16 +25,17 @@ public class Median {
 
     public int median() {
         // Implement your method to return the median of the numbers added so far
-        int size = binaryTree.size();
-        int next = 0;
-        for (int i = 0; i <= size/2; i++) {
-            if (!binaryTree.contains(next)) {
-                next = binaryTree.ceiling(next);
-            } else {
-                next = binaryTree.ceiling(next+1);
-            }
+        Iterator<Integer> iterator = binaryTree.iterator();
+
+        int i = 0;
+        int result = 0;
+        int size = binaryTree.size() / 2;
+
+        while (iterator.hasNext() && i<=size) {
+            result = iterator.next();
+            i++;
         }
 
-        return next;
+        return result;
     }
 }
