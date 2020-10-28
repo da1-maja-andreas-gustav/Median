@@ -12,7 +12,6 @@ public class Median {
 
     private TreeSet<Integer> binaryTree;
 
-
     public Median() {
         binaryTree = new TreeSet<>();
     }
